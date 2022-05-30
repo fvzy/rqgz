@@ -49,9 +49,6 @@ app.use(function (err, req, res, next) {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
-app.get('/short', (req, res) => {
-    res.sendFile(__dirname + '/view/short.html')
-})
 app.use('/short/delete/:id', async (req, res) => {
     db.findOne({
         delete: req.params.id
@@ -126,6 +123,7 @@ app.use(function (req, res, next) {
 })
 
 app.use('/', mainrouter);
+app.use('/short', mainrouter);
 app.use('/api', apirouter);
 
 app.listen(PORT, () => {
