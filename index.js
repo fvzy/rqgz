@@ -49,8 +49,12 @@ app.use(function (err, req, res, next) {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
+app.use('/', mainrouter);
+app.use('/api', apirouter);
+
+
 app.get('/short', (req, res) => {
-    res.sendFile(__dirname + '/view/short.html')
+    res.sendFile(__dirname + '/views/short.html')
 })
 
 app.use('/short/delete/:id', async (req, res) => {
@@ -125,10 +129,6 @@ app.post('/short/create', async (req, res) => {
 app.use(function (req, res, next) {
     res.sendStatus(404)
 })
-
-app.use('/', mainrouter);
-app.use('/api', apirouter);
-
 app.listen(PORT, () => {
     console.log(color("Server running on port " + PORT,'green'))
 })
