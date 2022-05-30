@@ -9,6 +9,10 @@ router.get('/docs', (req, res) => {
 router.get('/', (req, res) => {
     res.sendFile(__path + '/views/index.html')
 })
+router.get('/short', (req, res) => {
+    res.sendFile(__dirname + '/view/short.html')
+})
+
 
 
 module.exports = router
