@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JustNpc API</title>
+    
+    <link rel="stylesheet" href="https://cdn.itsdev.cf/demo/assets/css/main/app.css">
+    <link rel="stylesheet" href="https://cdn.itsdev.cf/demo/assets/css/main/app-dark.css">
+    <link rel="shortcut icon" href="https://cdn.itsdev.cf/demo/assets/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn.itsdev.cf/demo/assets/images/logo/favicon.png" type="image/png">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.css">
+<link rel="stylesheet" href="https://cdn.itsdev.cf/demo/assets/css/shared/iconly.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+    <div class="sidebar-header position-relative">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="#"><img src="https://uploader.caliph.my.id/file/7ykG87rgFd.png" alt="Logo" style="width:55px; height:55px;" srcset=""></a>
+            </div>
+            <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 14.5c2.219 0 4-1.763 4-3.982a4.003 4.003 0 0 0-4-4.018c-2.219 0-4 1.781-4 4c0 2.219 1.781 4 4 4zM4.136 4.136L5.55 5.55m9.9 9.9l1.414 1.414M1.5 10.5h2m14 0h2M4.135 16.863L5.55 15.45m9.899-9.9l1.414-1.415M10.5 19.5v-2m0-14v-2" opacity=".3"></path><g transform="translate(-210 -1)"><path d="M220.5 2.5v2m6.5.5l-1.5 1.5"></path><circle cx="220.5" cy="11.5" r="4"></circle><path d="m214 5l1.5 1.5m5 14v-2m6.5-.5l-1.5-1.5M214 18l1.5-1.5m-4-5h2m14 0h2"></path></g></g></svg>
+                <div class="form-check form-switch fs-6">
+                    <input class="form-check-input  me-0" type="checkbox" id="toggle-dark" >
+                    <label class="form-check-label" ></label>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--mdi" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="m17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 4l1.06-3l1.06 3l3.19.09m3.5 6.91l-1.64 1.25l.59 1.98l-1.7-1.17l-1.7 1.17l.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95l2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85c-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14c.4-.4.82-.76 1.27-1.08c.75-.53 1.93.36 1.85 1.19c-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82c-2.81 3.14-2.7 7.96.31 10.98c3.02 3.01 7.84 3.12 10.98.31Z"></path></svg>
+            </div>
+            <div class="sidebar-toggler  x">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+            
+            <li
+                class="sidebar-item active ">
+                <a href="index.html" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+   
+            
+            
+            <li
+                class="sidebar-item  ">
+                <a href="/uploader" class='sidebar-link'>
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                    <span>File Uploader</span>
+                </a>
+            </li>
+            <li
+                class="sidebar-item  ">
+                <a href="/short" class='sidebar-link'>
+                    <i class="bi bi-link-45deg"></i>
+                    <span>ShortUrl</span>
+                </a>
+            </li>
+            
+            
+            <li class="sidebar-title">Features Api</li>
+            
+                        <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-arrow-down-square-fill"></i>
+                    <span>Donwloader</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/music/joox?query=akad&apikey=APIKEY" target="_blank" >Joox search</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/joox3?query=akad&apikey=APIKEY" target="_blank" >Joox search2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/joox2?query=akad&apikey=APIKEY" target="_blank" >Joox Media</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/smule?url=https://www.smule.com/recording/lewis-capaldi-someone-you-loved-slower-piano/1112691877_3200708124&apikey=APIKEY" target="_blank" >Smule Download</a>
+                    </li>
+			                         <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/ytmp4?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY" target="_blank" >Youtube Video</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/ytmp42?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY" target="_blank" >Youtube Video2</a>
+                    </li>
+			                         <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/ytmp3?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY" target="_blank" >Youtube Audio</a>
+                    </li>
+			                         <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/ytmp32?url=https://youtu.be/6l5V3BWDcMw&apikey=APIKEY" target="_blank" >Youtube Audio2</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/facebook?url=https://www.facebook.com/botikaonline/videos/837084093818982&apikey=APIKEY" target="_blank" >FB download</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/fb?url=https://www.facebook.com/100044139564343/posts/375127390635243&apikey=APIKEY" target="_blank" >FB download2</a>
+                    </li>
+			                         <li class="submenu-item ">
+                        <a  target="_blank" href="/api/music/spotify?query=akad&apikey=APIKEY" target="_blank" >Spotify search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/pinterest?q=aeshestic&apikey=APIKEY" target="_blank" >pinterest search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/unplash?q=good night&apikey=APIKEY" target="_blank" >unplash search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/sticker?q=patrick&apikey=APIKEY" target="_blank" >stickerWA search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/stickerline?url=https://store.line.me/stickershop/product/9409/id=APIKEY" target="_blank" >stickerLINE search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/shoppe?q=jaket gunung&apikey=APIKEY" target="_blank" >shoppe search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/wallpaperflare?query=anime&apikey=APIKEY" target="_blank" >wallpaperflare search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/googleimg?query=kucing&apikey=APIKEY" target="_blank" >google img search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/apk?query=whatsapp&apikey=APIKEY" target="_blank" >Apk search</a>
+                    </li>
+                                                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/apkdl?url=URL_NYA&apikey=APIKEY" target="_blank" >Apk download</a>
+                    </li>
+			                         <li class="submenu-item ">
+                        <a  target="_blank" href="/api/yt/playmp3?query=surender&apikey=APIKEY" target="_blank" >play mp3</a>
+                    </li>
+                                     <li class="submenu-item ">
+                        <a  target="_blank" href="/api/yt/playmp4?query=surender&apikey=APIKEY" target="_blank" >play mp4</a>
+                    </li>
+			                        <li class="submenu-item ">
+                        <a  target="_blank" href="/api/yt/search?query=surender&apikey=APIKEY" target="_blank" >yt search</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/tiktok?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=APIKEY" target="_blank" >Tiktok download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/tiktok2?url=https://vt.tiktok.com/ZSeJ7P56G&apikey=APIKEY" target="_blank" >Tiktok download2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/ig?url=https://www.instagram.com/p/CUU8PwHhU-9/?utm_medium=copy_link&apikey=APIKEY" target="_blank" >IG POST download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/igtv?url=https://www.instagram.com/tv/CSW1PMohXDm&apikey=APIKEY" target="_blank" >IG TV download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/igstory?username=attahalilintar&apikey=APIKEY" target="_blank" >IG STORY</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/download/mediafire?url=https://www.mediafire.com/file/v035jsup2d2wp1n/textprome.js/file&apikey=APIKEY" target="_blank" >Mediafire download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/twitterimg?url=https://twitter.com/renaldypjs/status/1343516524934438912&apikey=APIKEY" target="_blank" >Twitter img download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/twittervid?url=https://twitter.com/weareoneEXO/status/1344811074864914433&apikey=APIKEY" target="_blank" >Twitter vid download</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/stalk/ig?username=_sekhaa&apikey=APIKEY" target="_blank" >Stalk Instagram</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/stalk/ig2?username=_sekhaa&apikey=APIKEY" target="_blank" >Stalk Instagram2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/stalk/github?username=inirey&apikey=APIKEY" target="_blank" >Stalk Github</a>
+                    </li>
+			            <li class="submenu-item ">
+                        <a  target="_blank" href="/api/stalk/tiktok?username=attahalilintar&apikey=APIKEY" target="_blank" >stalk tiktok</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/stalk/npm?query=hx&apikey=APIKEY" target="_blank" >stalk npm</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/pornhub?query=japan&apikey=APIKEY" target="_blank" >Pornhub search</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/xnxx?query=japan&apikey=APIKEY" target="_blank" >Xnxx search</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/downloader/xvideo?query=japan&apikey=APIKEY" target="_blank" >Xvideos search</a>
+                    </li>                
+                </ul>
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-back"></i>
+                    <span>Image Maker</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  href="/api/maker/harta-tahta?text=reyganz&apikey=APIKEY" target="_blank" >harta tahta</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/silverbutton?text=reyganz&apikey=APIKEY" target="_blank" >silver button</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/goldbutton?text=reyganz&apikey=APIKEY" target="_blank" >gold button</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/nulis?text=reyganz&apikey=APIKEY" target="_blank" >nulis</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/emoji2png?text=%F0%9F%98%85&apikey=APIKEY" target="_blank" >emoji to png</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/textpro/magma?text=Revita&apikey=APIKEY" target="_blank" >magma</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/hallowen-text?text=Revita&apikey=APIKEY" target="_blank" >hallowen effect</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/neon-light?text=Revita&apikey=APIKEY" target="_blank" >Neon light</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/broken-glass?text=Revita&apikey=APIKEY" target="_blank" >broken glass</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/art-papper?text=Revita&apikey=APIKEY" target="_blank" >Art papper</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/glossy?text=Revita&apikey=APIKEY" target="_blank" >glossy</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/water-color?text=Revita&apikey=APIKEY" target="_blank" >water color</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/multi-color?text=Revita&apikey=APIKEY" target="_blank" >multi color</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/neon-devil?text=Revita&apikey=APIKEY" target="_blank" >Neon devil</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/sky-text?text=Revita&apikey=APIKEY" target="_blank" >sky text</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/luxury?text=Revita&apikey=APIKEY" target="_blank" >luxury</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/vintage?text=Revita&text2=canszz&apikey=APIKEY" target="_blank" >vintage</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/writing?text=Revita&apikey=APIKEY" target="_blank" >Writing</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/engraved?text=Revita&apikey=APIKEY" target="_blank" >Engraved</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/glue-text?text=Revita&apikey=APIKEY" target="_blank" >Glue text</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/pornhub?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >porn HUB</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/holograpic?text=Revita&apikey=APIKEY" target="_blank" >holograpic</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/deluxe-silver?text=Revita&apikey=APIKEY" target="_blank" >deluxe silver</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/fabric?text=Revita&apikey=APIKEY" target="_blank" >Fabric</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/wicker?text=Revita&apikey=APIKEY" target="_blank" >wicker</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/larva?text=Revita&apikey=APIKEY" target="_blank" >Larva</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/toxic-bokeh?text=Revita&apikey=APIKEY" target="_blank" >Toxic</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/stroberi?text=Revita&apikey=APIKEY" target="_blank" >strobery</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/koi?text=Revita&apikey=APIKEY" target="_blank" >koi pish</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/bread?text=Revita&apikey=APIKEY" target="_blank" >Bread</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/horor-blood?text=Revita&apikey=APIKEY" target="_blank" >horor blood</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/honey?text=Revita&apikey=APIKEY" target="_blank" >honey</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/ice?text=Revita&apikey=APIKEY" target="_blank" >Ice</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  href="/api/textpro/rusty?text=Revita&apikey=APIKEY" target="_blank" >Rusty effect</a>
+                    </li>
+                        <li class="submenu-item ">
+                        <a  href="/api/textpro/captain?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >captain Amerika</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/3d-gradient?text=Revita&apikey=APIKEY" target="_blank" >gradien</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/christmas?text=Revita&apikey=APIKEY" target="_blank" >christmas</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/drop-water?text=Revita&apikey=APIKEY" target="_blank" >drop water</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/black-pink?text=Revita&apikey=APIKEY" target="_blank" >blackpink</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/logo-wolf?text=Revita&text2&apikey=APIKEY" target="_blank" >Logo Wolf</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/natural-leavest?text=Revita&apikey=APIKEY" target="_blank" >Natural leavest</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/logo-wolf2?text=Revita&text2&apikey=APIKEY" target="_blank" >Logo Wolf 2</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/harry-potter?text=Revita&apikey=APIKEY" target="_blank" >Harry Potter</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/3dstone?text=Revita&apikey=APIKEY" target="_blank" >3D stone</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/1917?text=Revita&apikey=APIKEY" target="_blank" >1917</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/thunder2?text=Revita&apikey=APIKEY" target="_blank" >Thunder 2</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/space?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >Space</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/joker-logo?text=Revita&apikey=APIKEY" target="_blank" >Joker logo</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/hallowen?text=Revita&apikey=APIKEY" target="_blank" >hallowen</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/blood?text=Revita&apikey=APIKEY" target="_blank" >Blood text</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/astone?text=Revita&apikey=APIKEY" target="_blank" >Astone</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/grafity-text?text=Revita&apikey=APIKEY" target="_blank" >Grafity text</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/grafity-text2?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >Grafity text2</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/ninja-logo?text=Revita&text2=canszz&apikey=APIKEY" target="_blank" >Ninja logo</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/lion-logo?text=Revita&text2=cansz&apikey=APIKEY" target="_blank" >lion logo</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/avengers-logo?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >Avengers</a>
+                    </li>
+                       <li class="submenu-item ">
+                        <a  href="/api/textpro/marvel-logo2?text=Revita&text2=cans" target="_blank" >Marvel studio</a>
+                    </li>
+            
+                           <li class="submenu-item ">
+                        <a  href="/api/photooxy/army?text=Revita&apikey=APIKEY" target="_blank" >Army text</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/matrix?text=Revita&apikey=APIKEY" target="_blank" >matrix</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/pubglogo?text1=Revita&text2=cans&apikey=APIKEY" target="_blank" >PUBG</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/maker/breakwall?text=Revita&apikey=APIKEY" target="_blank" >breakwall</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/butterfly?text=Revita&apikey=APIKEY" target="_blank" >butterfly</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/naruto?text1=Revita&apikey=APIKEY" target="_blank" >naruto</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/smoke?text1=Revita&apikey=APIKEY" target="_blank" >smoke text</a>
+                    </li> 
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/burn-papper?text=Revita&apikey=APIKEY" target="_blank" >burn papper</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/love-message?text=Revita&apikey=APIKEY" target="_blank" >love message</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/love-text?text=Revita&apikey=APIKEY" target="_blank" >love text</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/coffe-cup?text=Revita&apikey=APIKEY" target="_blank" >coffe cup</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/double-heart?text=Revita&apikey=APIKEY" target="_blank" >double heart</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/glitch?text=Revita&text2=cans&apikey=APIKEY" target="_blank" >glitch effect</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  href="/api/photooxy/message-under-grass?text=Revita&apikey=APIKEY" target="_blank" >message under grass</a>
+                    </li>             
+                </ul>
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-controller"></i>
+                    <span>Game</span>
+                </a>
+                <ul class="submenu ">
+                                              <li class="submenu-item ">
+                        <a  target="_blank" href="/api/kuis/tebakGambar?apikey=APIKEY" target="_blank" >Tebak gambar</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebaklirik?apikey=APIKEY" target="_blank" >Tebak lirik</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakkata?apikey=APIKEY" target="_blank" >Tebak kata</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakkalimat?apikey=APIKEY" target="_blank" >Tebak kalimat</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebaktebakan?apikey=APIKEY" target="_blank" >Tebak tebakan</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakjenaka?apikey=APIKEY" target="_blank" >Tebak jenaka</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakbendera?apikey=APIKEY" target="_blank" >Tebak bendera</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakkimia?apikey=APIKEY" target="_blank" >Tebak kimia</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/tebakchara?apikey=APIKEY" target="_blank" >Tebak chara</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/kuis/caklontong?apikey=APIKEY" target="_blank" >Cak lontong</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/game/family100?apikey=APIKEY" target="_blank" >family 100</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+<li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-house-heart"></i>
+                    <span>Islamic</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/muslim/asmaulhusna?apikey=APIKEY" target="_blank" >Asmaul Husna</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/muslim/jadwalshalat?kota=banyuwangi&apikey=APIKEY" target="_blank" >jadwal shalat </a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/muslim/hadits?kitab=bukhari&nomor=52&apikey=APIKEY" target="_blank" >Hadist sahih</a>
+                    </li>
+                                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/muslim/quran?surah=1&ayat=2&apikey=APIKEY" target="_blank" >Al Qur'an</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/muslim/kisahnabi?nabi=muhammad&apikey=APIKEY" target="_blank" >Kisah Nabi</a>
+                    </li>
+                </ul>
+            </li><li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-balloon"></i>
+                    <span>Fun</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi?text=assalamualaikum&apikey=APIKEYMU" target="_blank" >Simi IND</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi-ind2?text=hallo%20kak&apikey=APIKEYMU" target="_blank" >Simi IND2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi2?text=how%20are%20you&apikey=APIKEYMU" target="_blank" >Simi EN</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi-en2?text=Hi%20friend%20&apikey=APIKEYMU" target="_blank" >Simi EN2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi3?text=arigatou&apikey=APIKEYMU" target="_blank" >Simi JPN</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi-jp2?text=arigatou&apikey=APIKEYMU" target="_blank" >Simi JPN2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi4?text=assalamualaikum ya aqhi&apikey=APIKEYMU" target="_blank" >Simi ARB</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/fun/simisimi-ar2?text=la%20tahzan&apikey=APIKEYMU" target="_blank" >Simi ARB2</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/asupan?apikey=APIKEY" target="_blank" >Random asupan</a>
+                    </li>
+                </ul>
+            </li><li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-bezier2"></i>
+                    <span>Primbon</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/primbon/artimimpi?text=bangkrut&apikey=APIKEYMU" target="_blank" >Arti mimpi</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/primbon/artinama?text=Rey&apikey=APIKEYMU" target="_blank" >Arti nama</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-image"></i>
+                    <span>Random Image 1</span>
+                </a>
+                <ul class="submenu ">
+                                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/trans?apikey=APIKEY">wallhp Transformers </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/jeni?apikey=APIKEY">wallhp jeni blpk </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/jiso?apikey=APIKEY">wallhp jisso blpkl </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/cecan2?apikey=APIKEY">wallhp cecan </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/cogan2?apikey=APIKEY">wallhp cogan </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/satanic?apikey=APIKEY">wallhp satanic </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/katakata?apikey=APIKEY">wallhp quotes </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/pentol?apikey=APIKEY">wallhp pentol </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kartun?apikey=APIKEY">wallhp cartoon </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/tatasurya?apikey=APIKEY">wallhp planet </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/cyberspace?apikey=APIKEY">wallhp cyberspace </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/gaming?apikey=APIKEY">wallhp gaming </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/islami?apikey=APIKEY"> wallhp islami </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/programing?apikey=APIKEY"> wallhp programing </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/teknologi?apikey=APIKEY"> wallhp teknologi </a>
+                    </li>
+                             <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/mountain?apikey=APIKEY"> wallhp mountain </a>
+                    </li>
+                                        <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/ryujin?apikey=APIKEY" target="_blank" >Random Ryujin ityz</a>
+                    </li>
+		              <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/rose?apikey=APIKEY" target="_blank" >Random rose blpk</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/justina?apikey=APIKEY" target="_blank" >Random justina xie</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/random/blackpink?apikey=APIKEY" target="_blank" >Random blackpink</a>
+                    </li>                        
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/doraemon?apikey=APIKEY" target="_blank" >Random Doraemon</a>
+                    </li>                      
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/ppcouple?apikey=APIKEY" target="_blank" >Random ppcouple</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kpop?apikey=APIKEY" target="_blank" >Random kpop</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/hekel?apikey=APIKEY" target="_blank" >Random hekel</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/pubg?apikey=APIKEY" target="_blank" >Random PUBG</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/cogan?apikey=APIKEY" target="_blank" >Random cogan</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/cecan?apikey=APIKEY" target="_blank" >Random cecan</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/aesthetic?apikey=APIKEY" target="_blank" >Random Aesthetic</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/wallhp?apikey=APIKEY" target="_blank" >Random wallhp aesthetic</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/anime?apikey=APIKEY" target="_blank" >Random wallhp anime</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kucing?apikey=APIKEY" target="_blank" >Random Kucing</a>
+                    </li>
+                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/anjing?apikey=APIKEY" target="_blank" >Random Anjing</a>
+                    </li>
+                </ul>
+            </li>
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-exclude"></i>
+                    <span>Nsfw</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/nsfwloli?apikey=APIKEY" target="_blank" >Nswf loli</a>
+                    </li>
+                                  <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/ahegao?apikey=APIKEY" target="_blank" >nsfw ahegao</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/ass?apikey=APIKEY" target="_blank" >nsfw ass</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/bdsm?apikey=APIKEY" target="_blank" >Nswf bdsm</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/blowjob?apikey=APIKEY" target="_blank" >nsfw blowjob</a>
+                    </li>
+		                          <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/cuckold?apikey=APIKEY" target="_blank" >nsfw cuckold</a>
+                    </li>
+		                          <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/cum?apikey=APIKEY" target="_blank" >nsfw cum</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/ero?apikey=APIKEY" target="_blank" >nsfw ero</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/femdom?apikey=APIKEY" target="_blank" >nsfw femdom</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/foot?apikey=APIKEY" target="_blank" >nsfw foot</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/gangbang?apikey=APIKEY" target="_blank" >nsfw gangbanh</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/glasses?apikey=APIKEY" target="_blank" >nsfw glasses</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/hentai?apikey=APIKEY" target="_blank" >nsfw hentai</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/gifs?apikey=APIKEY" target="_blank" >nsfw gifs</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/jahy?apikey=APIKEY" target="_blank" >nsfw jahy</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/manga?apikey=APIKEY" target="_blank" >nsfw manga</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/masturbation?apikey=APIKEY" target="_blank" >nsfw mstb</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/neko?apikey=APIKEY" target="_blank" >nsfw neko</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/orgy?apikey=APIKEY" target="_blank" >nsfw orgy</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/panties?apikey=APIKEY" target="_blank" >nsfw panties</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/pussy?apikey=APIKEY" target="_blank" >nsfw pussy</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/neko2?apikey=APIKEY" target="_blank" >nsfw neko2</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/tentacles?apikey=APIKEY" target="_blank" >nsfw tentacles</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/thighs?apikey=APIKEY" target="_blank" >nsfw things</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/yuri?apikey=APIKEY" target="_blank" >nsfw yuri</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/nsfw/zettai?apikey=APIKEY" target="_blank" >nsfw zettai</a>
+                    </li>
+                </ul>
+            </li>
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-images"></i>
+                    <span>Random Image</span>
+                </a>
+                <ul class="submenu ">
+                    <li class="submenu-item ">
+                        <a  target="_blank" href="/api/random/cosplay?apikey=APIKEY" target="_blank" >Random Cosplay</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/waifu?apikey=APIKEY" target="_blank" >Waifu</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/waifu2?apikey=APIKEY" target="_blank" >Waifu2</a>
+                    </li>                       
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/shota?apikey=APIKEY" target="_blank" >shota</a>
+                    </li>
+		                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/loli?apikey=APIKEY" target="_blank" >anime loli</a>
+                    </li>
+	                      <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/yotsuba?apikey=APIKEY" target="_blank" >Random yotsuba</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/shinomiya?apikey=APIKEY" target="_blank" >Random shinomiya</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/yumeko?apikey=APIKEY" target="_blank" >Random yumeko</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/tejina?apikey=APIKEY" target="_blank" >Random tejina</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/chiho?apikey=APIKEY" target="_blank" >Random chiho</a>
+                    </li>
+                 <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/boruto?apikey=APIKEY" target="_blank" >Random boruto</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kaori?apikey=APIKEY" target="_blank" >Random kaori</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/shizuka?apikey=APIKEY" target="_blank" >Random shizuka</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kaga?apikey=APIKEY" target="_blank" >Random kaga</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kotori?apikey=APIKEY" target="_blank" >Random kotori</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/mikasa?apikey=APIKEY" target="_blank" >Random mikasa</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/akiyama?apikey=APIKEY" target="_blank" >Random akiyama</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/gremory?apikey=APIKEY" target="_blank" >Random gremory</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/isuzu?apikey=APIKEY" target="_blank" >Random isuzu</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/shina?apikey=APIKEY" target="_blank" >Random shina</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kagura?apikey=APIKEY" target="_blank" >Random kagura</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/shinka?apikey=APIKEY" target="_blank" >Random shinka</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/eba?apikey=APIKEY" target="_blank" >Random eba</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/elaina?apikey=APIKEY" target="_blank" >Random elaina</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/yuri?apikey=APIKEY" target="_blank" >Random yuri</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/erza?apikey=APIKEY" target="_blank" >Random erza</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/hinata?apikey=APIKEY" target="_blank" >Random hinata</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/minato?apikey=APIKEY" target="_blank" >Random minato</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/naruto?apikey=APIKEY" target="_blank" >Random Naruto</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/sagiri?apikey=APIKEY" target="_blank" >Random Sagiri</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/nezuko?apikey=APIKEY" target="_blank" >Random nezuko</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/rize?apikey=APIKEY" target="_blank" >Random rize</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/ana?apikey=APIKEY" target="_blank" >Random Anna</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/deidara?apikey=APIKEY" target="_blank" >Random Deidara</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/yuki?apikey=APIKEY" target="_blank" >Random Yuki</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/ana?apikey=APIKEY" target="_blank" >Random Anna</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/asuna?apikey=APIKEY" target="_blank" >Random Asuna</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/ayuzawa?apikey=APIKEY" target="_blank" >Random Ayuzawa</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/chitoge?apikey=APIKEY" target="_blank" >Random Chitoge</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/emilia?apikey=APIKEY" target="_blank" >Random Emilia</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/hestia?apikey=APIKEY" target="_blank" >Random hestia</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/inori?apikey=APIKEY" target="_blank" >Random inori</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/itachi?apikey=APIKEY" target="_blank" >Random itachi</a>
+                    </li>
+           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/madara?apikey=APIKEY" target="_blank" >Random Madara</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/sakura?apikey=APIKEY" target="_blank" >Random sakura</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/sasuke?apikey=APIKEY" target="_blank" >Random Sasuke</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/tsunade?apikey=APIKEY" target="_blank" >Random Tsunade</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/onepiece?apikey=APIKEY" target="_blank" >Random one piece</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/mobil?apikey=APIKEY" target="_blank" >Random mobil</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/montor?apikey=APIKEY" target="_blank" >Random montor</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/boneka-chucky?apikey=APIKEY" target="_blank" >Random boneka chucky</a>
+                    </li>
+                                                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/keneki?apikey=APIKEY" target="_blank" >Random keneki</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/megumin?apikey=APIKEY" target="_blank" >Random Megumin</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/toukachan?apikey=APIKEY" target="_blank" >Random toukachan</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/akira?apikey=APIKEY" target="_blank" >Random akira</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/itori?apikey=APIKEY" target="_blank" >Random itori</a>
+                    </li>
+		                           <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/kurumi?apikey=APIKEY" target="_blank" >Random kurumi</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/miku?apikey=APIKEY" target="_blank" >Random miku</a>
+                    </li>
+                                   <li class="submenu-item ">
+                        <a  target="_blank" href="/api/wallpaper/pokemon?apikey=APIKEY" target="_blank" >Random pokemon</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-incognito"></i>
+                    <span>Sticker Canvas</span>
+                </a>
+                <ul class="submenu ">
+                	<li class="submenu-item ">
+<a target="_blank" href="/api/maker/ttp?text=gw&apikey=APIKEY" target="_blank" >TTP maker</a>
+ <li class="submenu-item "><a target="_blank" href="/api/maker/attp?text=gw&apikey=APIKEY" target="_blank" >ATTP MAKER</a>
+ <li class="submenu-item "><a target="_blank" href="/api/canvas/welcome?username=Ditzzy&memberCount=15&bg=https://telegra.ph/file/70847838829ee294f08fb.jpg&pp=https://telegra.ph/file/80343d611e69f9e68457a.png&gcicon=https://telegra.ph/file/d0f0f68d75af9d388b098.png&gcname=Hehe&apikey=APIKEY" target="_blank" >Welcome Canvas</a>
+ <li class="submenu-item "><a target="_blank" href="/api/canvas/goodbye?username=Ditzzy&memberCount=15&bg=https://telegra.ph/file/70847838829ee294f08fb.jpg&pp=https://telegra.ph/file/80343d611e69f9e68457a.png&gcicon=https://telegra.ph/file/d0f0f68d75af9d388b098.png&gcname=Hehe&apikey=APIKEY" target="_blank" >Leave Canvas</a>
+             
+                </ul>
+            </li>
+            
+            
+            
+            
+            <li class="sidebar-title">Raise Support</li>
+            
+            
+            
+            
+            
+            <li
+                class="sidebar-item  ">
+                <a href="https://saweria.co/flyo" class='sidebar-link'>
+                    <i class="bi bi-cash"></i>
+                    <span>Donate</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            
+<div class="page-heading">
+    <h3>Docs Statistics</h3>
+</div>
+<div class="page-content">
+    <section class="row">
+        <div class="col-12 col-lg-9">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-3 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="stats-icon purple">
+                                        <i class="iconly-boldShow"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h6 class="text-muted font-semibold">Page Views</h6>
+                                    <h6 class="font-extrabold mb-0" id="visits">.....</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-3 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="stats-icon red">
+                                        <i class="iconly-boldBookmark"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h6 class="text-muted font-semibold">Feature</h6>
+                                    <h6 class="font-extrabold mb-0" id="ftr">112</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="row">
+    
+                
+        <div class="col-12 col-lg-3">
+            <div class="card">
+                <div class="card-body py-4 px-5">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl">
+                            <img src="https://avatars.githubusercontent.com/u/103289708?s=400&u=6593d3a5c94d04615ba84bb5240d0974bdb6ca45&v=4" alt="Face 1">
+                        </div>
+                        
+                        <div class="ms-3 name">
+                            <h5 id="test" class="font-bold">Ditzzy</h5>
+                            <h6 class="text-muted mb-0">@itszy.npc</h6>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="form-group has-icon-left">
+                                                <div class="position-relative">
+                                                    <input type="text" class="form-control" value="itskeyNPC" placeholder="Apikey">
+                                                    <div class="form-control-icon">
+                                                        <i class="bi bi-key"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+            
+            
+    </section>
+</div>
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    
+                    <div class="float-start">
+                        <p>Made with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                                href="https://Instagram.com/itszy.npc">Ditzzy</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.itsdev.cf/demo/assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-toast-plugin@1.3.2/dist/jquery.toast.min.js"></script>
+<script src="https://cdn.itsdev.cf/demo/assets/js/pages/dashboard.js"></script>
+<script>
+var fimtur = document.body.getElementsByTagName("a");
+ let all = fimtur.length;
+ document.getElementById('ftr').innerText =  all
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.countapi.xyz/hit/mee/visits");
+xhr.responseType = "json";
+xhr.onload = function() {
+    document.getElementById('visits').innerText = this.response.value;
+}
+xhr.send();
+$( "#copy" ).on( "click", function() { 
+	  var salin = document.getElementById("copy");
+	  salin.text();
+	  document.execCommand("copy");
+	$("#copy").css("color", "crimson");
+  $.toast({
+      text : '<strong>Success Copied</strong>',
+      hideAfter : false,
+    bgColor : '#23B65D'
+});
+});
+
+	</script>
+</body>
+
+</html>

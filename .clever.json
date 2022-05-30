@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_4be9b7c3-fe5d-4d5b-b7ff-1513cd680906",
+      "org_id": "user_e104756e-9dca-48b4-91eb-75a5603bcba5",
+      "deploy_url": "https://github.com/itszyNPC/rqgz.git",
+      "name": "rqgz",
+      "alias": "rqgz"
+    }
+  ]
+}

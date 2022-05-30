@@ -1,0 +1,40 @@
+.tengahin {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+* {
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: 800;
+    float: left;
+    font-family: courier;
+    color: #364f6b;
+}
+
+.footer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.footer-section {
+    width: 20%;
+    margin: 0 auto;
+}
+
+#copyright {
+    text-align: center;
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    margin-top: 50px;
+}
