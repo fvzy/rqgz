@@ -16,11 +16,6 @@ const isUrl = (url) => {
 }
 
 var app = express()
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
-
-
-
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
@@ -49,12 +44,10 @@ app.use(function (err, req, res, next) {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
-app.use('/', mainrouter);
-app.use('/api', apirouter);
 
 
-app.get('/short', (req, res) => {
-    res.sendFile(__dirname + '/views/short.html')
+app.get('/', (req, res) => {
+    res.redirect('https://api.ditzzsenpai.wtf');
 })
 
 app.use('/short/delete/:id', async (req, res) => {
