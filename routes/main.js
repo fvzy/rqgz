@@ -4,9 +4,14 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/docs', (req, res) => {
-    res.sendFile(__path + '/views/dash.html')
+    res.redirect('https://api.ditzzsenpai.wtf');
+
 })
 router.get('/', (req, res) => {
-    res.sendFile(__path + '/views/index.html')
+    res.redirect('https://api.ditzzsenpai.wtf');
+
 })
+
+
+
 module.exports = router

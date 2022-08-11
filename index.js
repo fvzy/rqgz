@@ -16,11 +16,6 @@ const isUrl = (url) => {
 }
 
 var app = express()
-var mainrouter = require('./routes/main'),
-    apirouter = require('./routes/api')
-
-
-
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
@@ -34,7 +29,7 @@ function makeid(length) {
 
 app.enable('trust proxy');
 app.set("json spaces",2)
-app.use(cors())#
+app.use(cors())
 app.use(secure)
 app.use(logger('dev'))
 app.use(express.json())
@@ -49,9 +44,12 @@ app.use(function (err, req, res, next) {
     console.error(err.stack)
     res.status(500).send('Something broke!')
 })
-app.get('/short', (req, res) => {
-    res.sendFile(__dirname + '/view/short.html')
+
+
+app.get('/', (req, res) => {
+    res.redirect('https://api.ditzzsenpai.wtf');
 })
+
 app.use('/short/delete/:id', async (req, res) => {
     db.findOne({
         delete: req.params.id
@@ -124,10 +122,6 @@ app.post('/short/create', async (req, res) => {
 app.use(function (req, res, next) {
     res.sendStatus(404)
 })
-
-app.use('/', mainrouter);
-app.use('/api', apirouter);
-
 app.listen(PORT, () => {
     console.log(color("Server running on port " + PORT,'green'))
 })
